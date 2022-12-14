@@ -1,14 +1,33 @@
+import {Customer} from './customer';
+
 export class Branch {
     private name: string
-    customers
+    private customers: Customer[]
 
-    getName()
+    constructor(name: string, customers: Customer[]) {
+        this.name = name;
+        this.customers = customers;
+    }
 
-    getCustomers()
+    getName() {
+        return this.name;
+    }
 
-    addCustomer()
+    getCustomers() {
+        return this.customers;
+    }
 
-    addCustomerTransaction()
+    addCustomer(customer: Customer) {
+        //code here
+        return true;
+    }
 
-    finsCutomer()
+    addCustomerTransaction(id: string) {
+        //code here
+        return true;
+    }
+
+    findCustomer(id: string) {
+        return Customer;
+    }
 }

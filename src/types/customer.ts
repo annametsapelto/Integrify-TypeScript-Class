@@ -1,15 +1,35 @@
+import { Transaction } from './transactions';
+
 export class Customer {
     private name: string
     private id: string
-    private Transactions[]: Transaction
+    private transactions: Transaction[]
 
-    getName()
+    constructor(name: string, id: string, transactions: Transaction[]) {
+        this.name = name;
+        this.id = id;
+        this.transactions = transactions;
+    }
 
-    getId()
+    getName() {
+        return this.name;
+    }
 
-    getTransactions()
+    getId() {
+        return this.id;
+    }
 
-    getBalance()
+    getTransactions() {
+        return this.transactions;
+    }
 
-    addTransaction()
+    getBalance() {
+        let balance = this.transactions.map(action => {})
+        return balance;
+    }
+
+    addTransaction(action: number) {
+        //code here
+        return true;
+    }
 }

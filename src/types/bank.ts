@@ -1,11 +1,28 @@
+import { Branch } from './branch';
+
 export class Bank {
     private name: string;
-    private branches[]: Branch;
+    private branches: Branch[];
 
-    addBranch()
+    constructor(name: string, branches: Branch[]) {
+        this.name = name;
+        this.branches = branches;
+    }
 
-    findBranchByName()
+    addBranch(branch: Branch) {
+        //code here
+        return true;
+    }
 
-    checkBranch()
-    
+    findBranchByName(branchName: string) {
+        //code here
+        let foundBranches: Branch[] = [];
+        return foundBranches;
+    }
+
+    checkBranch(branch: Branch) {
+        //code here
+        return true;
+    }
+
 }
