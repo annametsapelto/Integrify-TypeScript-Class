@@ -29,7 +29,8 @@ export class Customer {
     }
 
     addTransaction(action: number) {
-        //code here
-        return true;
+        let transactionAdded: boolean;
+        const newAction: Transaction = (action, new Date());
+        this.getTransactions().push(newAction);
     }
 }
