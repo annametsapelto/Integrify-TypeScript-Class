@@ -14,15 +14,18 @@ export class Bank {
         return true;
     }
 
-    findBranchByName(branchName: string) {
-        //code here
-        let foundBranches: Branch[] = [];
+    findBranchByName(branchName: string) {       
+        const foundBranches: Branch[] = this.branches.filter(branch => branch.getName() === branchName);
         return foundBranches;
     }
 
     checkBranch(branch: Branch) {
-        //code here
-        return true;
+        let branchFound: boolean;
+        if (this.branches.find(item => item === branch)) {
+            return branchFound = true;
+        } else {
+            return branchFound = false;}
+        
     }
 
 }
