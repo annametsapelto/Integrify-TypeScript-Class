@@ -9,3 +9,5 @@ export interface User extends Entity{
     role: string,
     avatar: string
 }
+
+

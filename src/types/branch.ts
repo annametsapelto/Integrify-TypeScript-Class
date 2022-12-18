@@ -17,17 +17,41 @@ export class Branch {
         return this.customers;
     }
 
-    addCustomer(customer: Customer) {
-        //code here
-        return true;
+    addCustomer(customer: Customer): boolean {
+        let customerAdded: boolean = false;
+        this.customers.forEach((currentCustomer) => {
+            if (currentCustomer.getId() === customer.getId()) {
+                customerAdded = false;
+            }
+        })
+        if (customer !== undefined) {
+            this.getCustomers().push(customer);
+            customerAdded = true;
+        }
+        return customerAdded;
     }
 
-    addCustomerTransaction(id: string) {
-        //code here
-        return true;
+    addCustomerTransaction(id: string, transaction: number): boolean {
+        let customerTransactionComplete: boolean;
+        const customer = this.findCustomer(id);
+        if(customer !== null) {
+            customer.addTransaction(transaction);
+            customerTransactionComplete = true;
+        } else {
+            customerTransactionComplete = false;
+        }
+        return customerTransactionComplete;
     }
 
-    findCustomer(id: string) {
-        return Customer;
+    findCustomer(id: string): Customer | null {
+        const customerFilter: Customer[] = this.customers.filter(
+            (customer) => customer.getId() === id
+        );
+
+        if (customerFilter.length === 0) {
+            return null;
+        } else {
+            return customerFilter[0];
+        }
     }
 }

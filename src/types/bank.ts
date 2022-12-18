@@ -22,10 +22,10 @@ export class Bank {
     checkBranch(branch: Branch) {
         let branchFound: boolean;
         if (this.branches.find(item => item === branch)) {
-            return branchFound = true;
+            branchFound = true;
         } else {
-            return branchFound = false;}
-        
+            branchFound = false;}
+        return branchFound;
     }
 
 }
