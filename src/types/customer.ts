@@ -23,14 +23,23 @@ export class Customer {
         return this.transactions;
     }
 
-    getBalance() {
-        let balance = this.transactions.map(action => {})
+    getBalance(): number {
+        let balance = 0;
+        this.transactions.forEach((action) => {
+            balance += action.amount;
+        })
         return balance;
     }
 
-    addTransaction(action: number) {
+    addTransaction(action: number): boolean {
         let transactionAdded: boolean;
-        const newAction: Transaction = (action, new Date());
-        this.getTransactions().push(newAction);
+        const balance = this.getBalance();
+        if (balance + action < 0) {
+            transactionAdded = false;
+        } else {
+            this.transactions.push({amount: action, date: new Date()});
+            transactionAdded = true;
+        }
+        return transactionAdded;
     }
 }
